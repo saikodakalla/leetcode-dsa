@@ -1,0 +1,21 @@
+# sliding window problem
+
+class Solution:
+    def findMaxAverage(self, nums: List[int], k: int) -> float:
+        
+        # fixed window length problem, find average of all windows
+        curr = 0 # current value is 0 
+        for i in range (k): # range is the length of the window
+            curr += nums[i] # add all the values from the window to current
+            ans = curr / k # answer is the current divided by 4 
+            
+        
+        
+        for i in range(k, len(nums)): # range is from k until the length of the window
+            curr += nums[i] - nums[i-k] # to the current, add the next value and subtract the first
+            ans = max(ans, curr / k) # answer is the max of the ans which is current divided by 4
+             
+        return ans
+
+        
+        
