@@ -1,0 +1,19 @@
+class Solution:
+    def longestOnes(self, nums: List[int], k: int) -> int:
+        # take a list of 1s and 0s 
+        # for each 0, add +1 to curr
+        # if curr > k, if leftmost value is 0 then remove it and remove 1 from curr
+        
+        left = curr = ans = 0 # left index, current value, and answer is 0
+        for right in range (len(nums)): # sliding window to the right for len of nums
+            if nums[right] == 0 : # if nums is 0 on the right
+                curr += 1 # add 1 to the current value
+             
+            while curr > k: # while the current value is ever greater than k
+                if nums[left] == 0: # if the leftmost value is 0, 
+                    curr -=1  # remove 1 from current
+                left += 1 # and add 1 to the index
+                
+            ans = max(ans, right - left + 1) # answer is the max length of the substring/window
+        
+        return ans 
