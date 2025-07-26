@@ -1,0 +1,6 @@
+class Solution(object):
+    def reverseString(self, s):
+        # i just return the reversed string
+        str = s.reverse()
+        return str;
+        
