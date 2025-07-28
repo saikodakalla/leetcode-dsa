@@ -1,0 +1,19 @@
+class Solution:
+    def minStartValue(self, nums: List[int]) -> int:
+
+        n = len(nums)
+
+        prefix = [nums[0]]
+        for i in range(1, n):
+            prefix.append(nums[i] + prefix[-1]) # create my prefix sum array
+
+        # find the minimum prefix sum value
+
+        min_prefix = min(prefix) # find lowest value in the prefix sum array 
+
+        return 1 - min_prefix if min_prefix < 1 else 1
+
+        #// as we go through nums we do running_sum = x + prefix[i]
+        #// we want it so that x + prefix[i] >= 1 for all i
+        #// rearrange to get x >= 1 - prefix[i]
+        #// this gives smallest valid value of startValue that guarantees its greater than 1 
