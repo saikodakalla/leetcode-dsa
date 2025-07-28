@@ -1,0 +1,12 @@
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+
+    #// array nums, runningSum of nums is sum of all values in nums
+    #// return the running sum of nums
+
+        prefix = [nums[0]] # set prefix array equal to an empty array starting at the first nums value
+
+        for i in range(1, len(nums)): # iterating over the 2nd to the last value of nums
+            prefix.append(prefix[-1] + nums[i]) # add the previous value to value of index i 
+
+        return prefix 
