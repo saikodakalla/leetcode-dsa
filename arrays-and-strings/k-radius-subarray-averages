@@ -1,0 +1,21 @@
+class Solution:
+    def getAverages(self, nums: List[int], k: int) -> List[int]:
+
+        prefix = [0] # prefix sum array starts at 0 
+        for i in range(0, len(nums)): 
+            prefix.append(nums[i] + prefix[-1]) # build prefix sum array
+
+
+        avgs = [] # building avgs array
+
+        for i in range(0, len(nums)): # iterating over all values of nums 
+            if i - k < 0 or i + k >= len(nums): # if k radius doesnt exist for value of i 
+                avgs.append(-1) # add -1 to the d
+
+            else: # if the radius k at index i is valid 
+                left = i - k # left value
+                right = i + k # right value 
+                total = prefix[right + 1] - prefix[left] # total is prefix sum of right + 1 - left, from course 
+                avgs.append(total // (2 * k + 1)) # append total // 2k + 1 for the average to avgs
+
+        return avgs 
