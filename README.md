@@ -1,2 +1,2 @@
 # leetcode-dsa
-interview prep
+interview preparation for future recruiting
