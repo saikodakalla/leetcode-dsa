@@ -1,0 +1,11 @@
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums) # find the number of distinct numbers in the array nums
+        for i in range(n + 1): # iterate through the amount of distinct numbers plus 1 to account for 0 
+            if i not in nums: # if a value from 0 to # of distinct numbers is not in that array
+                return i # return that value 
+        
+       
+            
+        
+        
