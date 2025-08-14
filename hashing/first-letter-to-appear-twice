@@ -1,0 +1,9 @@
+class Solution:
+    def repeatedCharacter(self, s: str) -> str:
+        for i in range(len(s)): # iterate i through the length of string s 
+            c = s[i] # set c equal to the character of s at index i 
+            for j in range(i): # iterate through all the characters in the string
+                if s[j] == c: # if the value of string s at j is ever equal to (string s at i)
+                    return c # return this value as its a duplicate value
+
+        return "" # return "" if no values are ever repeated
