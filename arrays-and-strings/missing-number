@@ -5,7 +5,14 @@ class Solution:
             if i not in nums: # if a value from 0 to # of distinct numbers is not in that array
                 return i # return that value 
         
-       
-            
+this solution is O(n^2), use the solution below for more optimal time complexity:
+
+class Solution: 
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums) 
+        seen = set(nums) # O(n) 
+        for i in range(n + 1): # 0..n inclusive 
+            if i not in seen: # O(1) average 
+                return i
         
         
