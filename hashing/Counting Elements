@@ -1,0 +1,10 @@
+class Solution:
+    def countElements(self, arr: List[int]) -> int:
+        ans = 0
+        nums_set = set(arr)  # O(n)
+
+        for num in arr:   # iterate arr, not set, to count duplicates too
+            if num + 1 in nums_set:   # O(1) average
+                ans += 1
+
+        return ans
