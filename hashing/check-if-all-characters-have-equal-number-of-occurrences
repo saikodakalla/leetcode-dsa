@@ -1,0 +1,10 @@
+from collections import defaultdict
+
+class Solution:
+    def areOccurrencesEqual(self, s: str) -> bool:
+        counts = defaultdict(int) # create a dictionary 
+        for c in s: # iterate over the string s 
+            counts[c] += 1 # append 1 to the frequency value for the character
+        
+        frequencies = counts.values() 
+        return len(set(frequencies)) == 1 # returns True if 1 frequency, False if more than 1 frequency 
