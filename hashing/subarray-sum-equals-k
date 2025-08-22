@@ -30,3 +30,4 @@ class Solution:
  
 for subarray sum equals k, the reason we create the prefix sum is because if we take the current value of the prefix sum and then substract our k value from it (what we want our total sum of subarray to equal), 
 and we get a number that exists in our prefix sum beforehand, that means that there is a specific part of the array before the subarray that we can chop off to give us the subarray of sum k alone (NeetCode Video)
+https://www.youtube.com/watch?v=fFVZt-6sgyo
