@@ -1,0 +1,15 @@
+class Solution:
+    def intersection(self, nums: List[List[int]]) -> List[int]:
+        counts = defaultdict(int)
+        for arr in nums: # iterate through all the arrays inside nums
+            for x in arr: # iterate through all the numbers inside each array
+                counts[x] += 1 # add 1 to the frequency of the value for each key
+        
+        n = len(nums) # n is the length of the nums array
+        ans = [] # answer array
+        for key in counts: # iterate through all keys in the counts dictionary
+            if counts[key] == n: # if the frequency value for the key is equal to len of n (number of arrays) so makes sure the frequency of this element matches the total number of arrays inside nums therefore this element is present in each array
+                ans.append(key)
+
+        return sorted(ans) 
+
