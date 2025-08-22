@@ -1,0 +1,30 @@
+from collections import defaultdict
+
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        # counts will map prefix sums → frequency (how many times we've seen that prefix sum)
+        counts = defaultdict(int)
+
+        # initialize with counts[0] = 1 because the empty prefix has sum 0
+        # this lets us count subarrays that start at index 0
+        counts[0] = 1
+
+        # ans = total number of valid subarrays found
+        # curr = running prefix sum as we move through nums
+        ans = curr = 0
+
+        # iterate over each number in the array
+        for num in nums:
+            # update the running prefix sum
+            curr += num
+
+            # check if there was a prefix sum (curr - k) earlier
+            # if so, then the subarray between that prefix and the current index sums to k
+            ans += counts[curr - k]
+
+            # record that we've now seen this prefix sum
+            counts[curr] += 1
+    
+        # return the total number of valid subarrays
+        return ans
+ 
