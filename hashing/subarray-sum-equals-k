@@ -28,6 +28,7 @@ class Solution:
         # return the total number of valid subarrays
         return ans
  
-for subarray sum equals k, the reason we create the prefix sum is because if we take the current value of the prefix sum and then substract our k value from it (what we want our total sum of subarray to equal), 
-and we get a number that exists in our prefix sum beforehand, that means that there is a specific part of the array before the subarray that we can chop off to give us the subarray of sum k alone (NeetCode Video)
+for subarray sum equals k, the reason we create the prefix sum hashmap is because if we take the current value of the prefix sum and then substract our k value from it (what we want our total sum of subarray to equal), 
+and we get a number that exists in our prefix sum hashmap beforehand, that means that there is a specific part of the array before the subarray that we can chop off to give us the subarray of sum k alone, and 
+if the count of the prefix sum is more than 1, that means there are more than 1 ways to chop off specific parts of the array before the subarray to give us subarray of sum k alone (NeetCode Video)
 https://www.youtube.com/watch?v=fFVZt-6sgyo
