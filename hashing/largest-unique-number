@@ -1,0 +1,17 @@
+from collections import defaultdict
+
+class Solution:
+    def largestUniqueNumber(self, nums: List[int]) -> int:
+        counts = defaultdict(int)
+        
+        for value in nums:
+            counts[value] += 1
+            
+        singular_appearance = [value for value, frequency in counts.items() if frequency == 1]
+        
+        if not singular_appearance:      # empty list → no unique numbers
+            return -1
+        
+        return max(singular_appearance)
+    
+      
