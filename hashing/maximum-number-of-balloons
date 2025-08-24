@@ -1,0 +1,20 @@
+from collections import defaultdict
+
+class Solution:
+    def maxNumberOfBalloons(self, text: str) -> int:
+        
+        freq = defaultdict(int)
+        
+        for c in text:
+            freq[c] += 1
+        
+        return min(
+     freq['b'] // 1,
+  freq['a'] // 1,
+  freq['l'] // 2,   # needs two l’s
+  freq['o'] // 2,   # needs two o’s
+  freq['n'] // 1
+                    )
+
+    # do minimum because if we have 2 b's and 100 of other letters, max we can have is 2 balloons. 
+    # also floor divide because even if we have 3 l's we can only make one balloon so we reduce it to 1 from 1.5 with floor division
